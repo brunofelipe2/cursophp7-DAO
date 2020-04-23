@@ -9,12 +9,12 @@ class Sql extends PDO{
 		$this->conn = new PDO("mysql:host=localhost:3308;dbname=dbphp7", "root", "");
 	}
 
-	private function setParams($statment, $parameters = array()){
+	private function setParams($statement, $parameters = array()){
 
 		//associar os comandos a esses paramentos
 		foreach ($parameters as $key => $value) {
 			
-			$this->setParams($key, $value);
+			$this->setParam($statement, $key, $value);
 		}
 
 	}
